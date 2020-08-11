@@ -1,3 +1,9 @@
+const indexedDB = window.indexedDB || 
+window.mozIndexDB || 
+window.webkitIndexDB ||
+window.msIndexDB ||
+window.shimIndexDB; 
+
 let db;
 const request = indexedDB.open("budget", 1);
 
@@ -50,11 +56,6 @@ function checkDatabase() {
                 });
         }
     };
-}
-function deletePending() {
-    const transaction = db.transaction(["pending"], "readwrite");
-    const store = transaction.objectStore("pending");
-    store.clear();
 }
 
 // listen for app coming back online
