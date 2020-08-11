@@ -2,7 +2,8 @@ const FILES_TO_CACHE = ["/",
 "/index.html", 
 "index.js", 
 "favicon.ico",
-"/stle.css"
+"/styles.css",
+'/transaction.js'
 ];
 
 const CACHE_NAME = "static-cache-v2";
@@ -60,4 +61,12 @@ self.addEventListener("fetch", function(evt) {
     );
 
     return;
-}});
+  }
+    evt.respondWith(
+        caches.open(CACHE_NAME).then(cache => {
+            return cache.match(evt.request).then(response => {
+                return response || fetch(evt.request);
+            });
+        })
+    );
+});
