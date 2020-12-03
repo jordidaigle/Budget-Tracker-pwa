@@ -19,6 +19,10 @@ Requirements:
 
 A user can input income or expense and add it to the table of calculation. Every time a user adds something, the graph will re-assess and re-format.
   <img src="public/assets/Screen Shot 2020-12-03 at 4.20.27 PM.png" style=" width:50px ; height:50px " />
+  
+## Technologies
+
+Express, fetch API, Javascript, CSS, HTML
 
 
 ## Deployed At
